@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import React, { useState, useEffect } from "react";
-
 import { Button, Form, Input, Select } from "antd";
 import TextArea from "antd/es/input/TextArea";
 
@@ -100,68 +100,70 @@ const ReportMap: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    let map: L.Map | null = null;
-    let areaPolygon: L.Polygon | null = null;
-    if (Go2Current) {
-      console.log("current");
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        map = L.map("map").setView([latitude, longitude], 19);
+    if (typeof window !== "undefined") {
+      let map: L.Map | null = null;
+      let areaPolygon: L.Polygon | null = null;
+      if (Go2Current) {
+        console.log("current");
+        navigator.geolocation.getCurrentPosition((position) => {
+          const { latitude, longitude } = position.coords;
+          map = L.map("map").setView([latitude, longitude], 19);
+
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+              'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 19,
+          }).addTo(map!);
+
+          L.marker([latitude, longitude]).addTo(map).bindPopup("Now");
+        });
+      }
+
+      if (
+        !Go2Current &&
+        !map &&
+        geometry?.coordinates[0] &&
+        geometry.coordinates.length > 0
+      ) {
+        console.log(
+          "geometry",
+          geometry,
+          geometry.coordinates[0][0][1],
+          geometry.coordinates[0][0][0]
+        );
+        map = L.map("map").setView(
+          [geometry.coordinates[0][0][0], geometry.coordinates[0][0][1]],
+          19
+        );
+
+        areaPolygon = L.polygon(geometry.coordinates[0], {
+          color: "purple",
+          weight: 3,
+          fillColor: "pink",
+          fillOpacity: 0.4,
+        }).addTo(map!);
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution:
             'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
           maxZoom: 19,
-        }).addTo(map!);
+        }).addTo(map);
 
-        L.marker([latitude, longitude]).addTo(map).bindPopup("Now");
-      });
-    }
-
-    if (
-      !Go2Current &&
-      !map &&
-      geometry?.coordinates[0] &&
-      geometry.coordinates.length > 0
-    ) {
-      console.log(
-        "geometry",
-        geometry,
-        geometry.coordinates[0][0][1],
-        geometry.coordinates[0][0][0]
-      );
-      map = L.map("map").setView(
-        [geometry.coordinates[0][0][0], geometry.coordinates[0][0][1]],
-        19
-      );
-
-      areaPolygon = L.polygon(geometry.coordinates[0], {
-        color: "purple",
-        weight: 3,
-        fillColor: "pink",
-        fillOpacity: 0.4,
-      }).addTo(map!);
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        maxZoom: 19,
-      }).addTo(map);
-
-      // Add click event listener to the map
-    }
-
-    return () => {
-      if (map) {
-        map.remove();
-        map = null;
+        // Add click event listener to the map
       }
 
-      if (areaPolygon) {
-        areaPolygon.remove();
-        areaPolygon = null;
-      }
-    };
+      return () => {
+        if (map) {
+          map.remove();
+          map = null;
+        }
+
+        if (areaPolygon) {
+          areaPolygon.remove();
+          areaPolygon = null;
+        }
+      };
+    }
   }, [geometry, currentArea, edit, Go2Current]);
 
   return (

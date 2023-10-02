@@ -1,7 +1,6 @@
 import L from 'leaflet';
 import React, { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
-
 import { Button, Form, Input, Select } from 'antd';
 import { AreaType, GeometryType } from '@/app/type';
 import { getAreas, postVineyard } from '@/app/server/api/apis';

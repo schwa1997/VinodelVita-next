@@ -1,11 +1,10 @@
 "use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { SmileFilled } from "@ant-design/icons";
 import { Button, Result } from "antd";
 
 const ResultContainer = () => {
-  const router = useRouter();
   return (
     <div
       id="result-container"
@@ -21,21 +20,9 @@ const ResultContainer = () => {
         }
         extra={[
           <>
-            <Button
-              id="button"
-              onClick={() => {
-                router.reload(); // Reloads the current page
-              }}
-            >
-              Refresh
-            </Button>
-            <Button id="button">
-              <Link href="/">
-                <a>
-                  <Button>Home Page</Button>
-                </a>
-              </Link>
-            </Button>
+            <Link href="/" id="button">
+              <Button>Home Page</Button>
+            </Link>
           </>,
         ]}
       />

@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect, useState } from 'react';
 import {
   DownOutlined,
   EditOutlined,
@@ -11,9 +11,9 @@ import {
   UnorderedListOutlined,
   UserAddOutlined,
   UserOutlined,
-} from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Dropdown, Space } from "antd";
+} from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Dropdown, Space } from 'antd';
 const items: MenuProps["items"] = [
   {
     label: (
@@ -118,7 +118,12 @@ const items: MenuProps["items"] = [
   },
 ];
 export const Header: FC = () => {
-  // const currentUser = localStorage.getItem("currentUser");
+  const [currentUser, setCurrentUser] = useState<string | null>(null);
+
+  useEffect(() => {
+    const user = localStorage.getItem('currentUser');
+    setCurrentUser(user);
+  }, []); // Run this effect only once on component mount
   return (
     <>
       <div
@@ -141,7 +146,7 @@ export const Header: FC = () => {
             >
               <Space>
                 <UserOutlined rev={undefined} />
-                {/* {currentUser} */}
+                {currentUser}
                 <DownOutlined rev={undefined} />
               </Space>
             </a>
