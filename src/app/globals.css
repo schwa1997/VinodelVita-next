@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,122 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+:root {
+  --font-size-base: 0.875rem;
+  --font-family-standard: 'Source Sans Pro', 'Hiragino Sans GB', 'Microsoft Yahei', simsun,
+      helvetica, arial, sans-serif, monospace;
+  --font-family-kaiti: '楷体', 'STKaiti', 'Source Sans Pro', 'Hiragino Sans GB', 'Microsoft Yahei',
+      simsun, helvetica, arial, sans-serif, monospace;
+  --font-family-firacode: 'Fira Code', 'Source Sans Pro', 'Hiragino Sans GB', 'Microsoft Yahei',
+      simsun, helvetica, arial, sans-serif, monospace;
 }
+html,
+body,
+#root {
+    @apply tw-w-full tw-p-0 tw-m-0 tw-font-sans;
+}
+
+html {
+    @apply tw-h-[100vh];
+}
+
+body,
+#root {
+    @apply tw-h-full;
+}
+
+body {
+    @apply tw-bg-[url(/images/bg-light.jpg)];
+}
+
+html[data-theme='tw-dark'] body {
+    @apply tw-bg-[url(/images/dark.jpeg)] tw-text-zinc-200;
+}
+
+html[data-theme='tw-dark'] label {
+    @apply tw-text-zinc-200 !important;
+}
+
+html[data-theme='tw-dark'] #button {
+    @apply tw-from-neutral-800 tw-via-neutral-800 tw-to-neutral-800  tw-text-white !important;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+html[data-theme='tw-dark'] #Report {
+    @apply tw-bg-neutral-800 hover:tw-bg-neutral-800/80 tw-text-stone-950;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+html[data-theme='tw-dark'] #Container {
+    @apply tw-from-neutral-800 tw-via-neutral-800/60 tw-to-neutral-800 hover:tw-bg-neutral-800/80 tw-text-white;
+}
+
+html[data-theme='tw-dark'] #pagination {
+    @apply tw-from-neutral-800 tw-via-neutral-800/60 tw-to-neutral-800 hover:tw-bg-neutral-800/80 tw-text-zinc-200 !important;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+html[data-theme='tw-dark'] #Container-title {
+    @apply tw-text-violet-100 !important;
+}
+
+html[data-theme='tw-dark'] #custom-icon {
+    @apply tw-bg-neutral-800/90;
+}
+
+html[data-theme='tw-dark'] #form {
+    @apply tw-bg-neutral-800/70 hover:tw-bg-neutral-800 tw-border-violet-200 tw-border-2 tw-border-solid tw-text-white !important;
+}
+
+html[data-theme='tw-dark'] #result-container {
+    @apply tw-from-neutral-800 tw-via-neutral-700 tw-to-neutral-600 tw-text-white !important;
+}
+
+html[data-theme='tw-dark'] #result-container-title {
+    @apply tw-text-white !important;
+}
+
+html[data-theme='tw-dark'] #button {
+    @apply tw-bg-neutral-800/90 tw-text-white;
+}
+
+html[data-theme='tw-dark'] #report-card {
+    @apply tw-bg-neutral-800/80 tw-text-white hover:tw-bg-neutral-800;
+}
+
+html[data-theme='tw-dark'] #report-card-title {
+    @apply tw-bg-neutral-500/80 tw-text-white hover:tw-bg-neutral-800;
+}
+
+html[data-theme='tw-dark'] #index-svg {
+    @apply tw-filter tw-brightness-50;
+}
+
+html[data-theme='tw-dark'] #signup-form,
+#login-form,
+#result {
+    @apply tw-from-neutral-800 tw-via-neutral-800/90 tw-to-neutral-800 tw-text-white !important;
+}
+
+html[data-theme='tw-dark'] #landing-section {
+    @apply tw-bg-customGray tw-text-white !important;
+}
+
+html[data-theme='tw-dark'] #footer-link {
+    @apply hover:tw-text-pink-500 tw-text-white !important;
+}
+
+html[data-theme='tw-dark'] #landing-page-footer {
+    @apply tw-from-neutral-800/90 tw-via-neutral-600/60 tw-to-customGray/50 hover:tw-bg-neutral-800/80 tw-text-white !important;
+}
+
+.container {
+    @apply tw-bg-neutral-100/90 tw-absolute tw-right-0 tw-top-0 tw-shadow-black/20 tw-backdrop-blur-sm tw-shadow-md tw-rounded tw-p-5 tw-mx-1 tw-min-w-[2rem] tw-w-full;
+}
+
+.languagecontainer {
+    @apply tw-bg-neutral-100/90 tw-shadow-black/20 tw-backdrop-blur-sm tw-shadow-md tw-rounded-md tw-p-5 tw-mx-1 tw-min-w-[20rem];
+}
+
+/* 响应式样式 */

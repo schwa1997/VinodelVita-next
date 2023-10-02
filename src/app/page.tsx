@@ -1,115 +1,120 @@
-import Image from 'next/image'
-import FooterComponent from './dashboard/component/footer'
+import Image from "next/image";
+import FooterComponent from "./components/Footer/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/homeIcon.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <div className="tw-flex tw-flex-col">
+        <div className="tw-relative tw-pt-48 tw-px-12 tw-text-violet-50 tw-place-content-center">
+          <div className="tw-container tw-px-3 tw-mx-auto tw-flex tw-flex-wrap tw-flex-col md:tw-flex-row tw-items-center">
+            <div className="tw-flex tw-flex-col tw-w-full md:tw-w-2/5 tw-justify-center tw-items-start tw-text-center md:tw-text-left">
+              <p className="tw-uppercase tw-tracking-loose tw-w-full tw-text-violet-50">
+                How is your vineyard?
+              </p>
+              <h1 className="tw-my-4 tw-text-5xl tw-font-bold tw-leading-tight tw-text-violet-50">
+                Use Vita Del Vino to imrove the management!
+              </h1>
+              <p className="tw-leading-normal tw-text-2xl tw-mb-8">
+                For managing and reporting your vineyards! If you dont use
+                proper tool, you will miss a fortune!
+              </p>
+              <a className="tw-w-full" href="/users/signup">
+                <button
+                  id="button"
+                  className="tw-mx-auto tw-w-64 tw-h-12 lg:tw-mx-0 hover:tw-underline tw-text-white tw-bg-violet-300  tw-font-bold tw-rounded-full tw-my-6 py-4 tw-px-8 tw-shadow-lg focus:tw-outline-none focus:tw-shadow-outline tw-transform tw-transition hover:tw-scale-105 tw-duration-300 tw-ease-in-out"
+                >
+                  Sign Up
+                </button>
+              </a>
+            </div>
+            <div className="tw-w-1/2 xs:tw-w-4/5 xs:tw-left-0 md:tw-w-1/2 tw-py-6 tw-text-center">
+              <Image
+                src="/homeIcon.svg"
+                alt="Vercel Logo"
+                className="dark:invert"
+                width={500}
+                height={500}
+                priority
+              />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/homeIcon2.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className="tw-relative">
+          <svg
+            viewBox="0 0 1428 174"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            id="index-svg"
+          >
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+              <g
+                transform="translate(-2.000000, 44.000000)"
+                fill="#FFFFFF"
+                fillRule="nonzero"
+              >
+                <path
+                  d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+                  opacity="0.100000001"
+                />
+                <path
+                  d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                  opacity="0.100000001"
+                />
+                <path
+                  d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+                  id="Path-4"
+                  opacity="0.200000003"
+                />
+              </g>
+              <g
+                transform="translate(-4.000000, 76.000000)"
+                fill="#FFFFFF"
+                fillRule="nonzero"
+              >
+                <path d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z" />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <section
+          id="landing-section"
+          className="tw-bg-white tw-py-16 md:tw-py-24"
+          style={{ position: "relative", top: "-5px" }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="tw-container tw-max-w-5xl tw-mx-auto tw-px-4 tw-md-px-8">
+            <h2 className="tw-w-full tw-text-4xl md:tw-text-7xl tw-font-bold tw-leading-tight tw-text-center">
+              Vita Del Vino
+            </h2>
+            <div className="tw-flex tw-flex-col md:tw-flex-row tw-mt-8">
+              <div className="tw-w-full md:tw-w-1/2 tw-p-6">
+                <h3 className="tw-text-2xl md:tw-text-4xl tw-font-bold tw-leading-none tw-mb-3">
+                  Professional Tracker
+                </h3>
+                <p className="tw-text-lg md:tw-text-2xl tw-mb-8 tw-text-justify">
+                  We are a team of agronomists, supporting numerous customer
+                  companies distributed in various countries of the world. We
+                  want to create a web application to support the management of
+                  vine diseases. This application must allow the detection of
+                  vine diseases as soon as they occur to be able to follow their
+                  evolution and plan the necessary interventions.
+                </p>
+              </div>
+              <div className="tw-w-full md:tw-w-1/2 tw-p-6 tw-flex tw-justify-center">
+                <Image
+                  className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+                  src="/homeIcon3.svg"
+                  alt="Next.js Logo"
+                  width={500}
+                  height={500}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
         <FooterComponent />
       </div>
-    </main>
-  )
+    </>
+  );
 }
