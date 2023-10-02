@@ -1,3 +1,5 @@
+"use client"
+
 import { SmileFilled } from '@ant-design/icons';
 import { Button, Result } from 'antd';
 

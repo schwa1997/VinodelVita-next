@@ -1,3 +1,4 @@
+"use client"
 import { Button, Card, Divider, Form, Input, Select } from 'antd';
 
 import { useState } from 'react';

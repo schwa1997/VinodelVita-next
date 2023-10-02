@@ -123,7 +123,7 @@ export const Header: FC = () => {
     <>
       <div
         className="tw-fixed md:tw-px-6 tw-grid tw-grid-cols-2 tw-place-content-between tw-z-50 tw-w-full  
-        tw-bg-gradient-to-r tw-from-violet-300 tw-via-purple-300 tw-to-violet-50 tw-backdrop-blur-sm tw-shadow-md tw-p-6 "
+        tw-bg-gradient-to-r tw-from-violet-300 tw-via-purple-300 tw-to-violet-50 tw-backdrop-blur-sm tw-shadow-md tw-p-8 "
       >
         <div className="tw-grid tw-content-center">
           <a href="/" target="_self" className="tw-no-underline tw-text-5xl tw-font-bold">
