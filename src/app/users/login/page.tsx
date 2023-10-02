@@ -12,7 +12,6 @@ const Login = () => {
   const router = useRouter();
   const [err, setErr] = useState(false);
   const onFinish = (value: { companyName: string; password: string }) => {
-    console.log("login");
     setErr(false);
     const { companyName, password } = value;
 
@@ -26,17 +25,14 @@ const Login = () => {
         console.log("login");
         localStorage.setItem("currentUser", companyName);
         router.push("/");
-        window.location.reload();
         setErr(false);
-
-        // Set the logout timer after successful login
         setTimeout(() => {
           console.log("log out");
           localStorage.removeItem("jwtToken");
           localStorage.removeItem("role");
           localStorage.removeItem("id");
           localStorage.removeItem("currentUser");
-          router.push("/users/login"); // 导航到根路径('/')
+          router.push("/users/login");
         }, 60000); // 60000 milliseconds = 60 seconds (1 minute)
       })
       .catch((error) => {
@@ -55,8 +51,8 @@ const Login = () => {
               src="/login.svg"
               alt="Vercel Logo"
               className="dark:invert"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               priority
             />
           </div>
