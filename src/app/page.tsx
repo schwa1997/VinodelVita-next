@@ -12,7 +12,7 @@ export default function Home() {
                 How is your vineyard?
               </p>
               <h1 className="tw-my-4 tw-text-5xl tw-font-bold tw-leading-tight tw-text-violet-50">
-                Use Vita Del Vino to imrove the management!
+                Use Vita Del Vino to improve the management!
               </h1>
               <p className="tw-leading-normal tw-text-2xl tw-mb-8">
                 For managing and reporting your vineyards! If you dont use
