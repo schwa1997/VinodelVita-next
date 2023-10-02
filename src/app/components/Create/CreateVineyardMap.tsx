@@ -1,3 +1,5 @@
+"use client"
+
 import L from 'leaflet';
 import React, { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
