@@ -4,7 +4,7 @@ import { Button, Card, Divider, Form, Input, Select } from 'antd';
 import { useState } from 'react';
 
 import TextArea from 'antd/es/input/TextArea';
-
+import { useRouter } from "next/router";
 import { DeleteFilled, EditFilled, SmileFilled } from '@ant-design/icons';
 
 
@@ -28,6 +28,7 @@ export const ReportCard: React.FC<ReportCardProps> = ({
     area,
     vineyard,
 }) => {
+    const router = useRouter();
     const [edit, setEdit] = useState(false);
     const [deleteEdit, setDeleteEdit] = useState(false);
     const [editSuccess, setEditSuccess] = useState(false);
@@ -38,7 +39,7 @@ export const ReportCard: React.FC<ReportCardProps> = ({
         deleteReortByID(id)
             .then(() => {
                 console.log('deleted:');
-                window.location.reload();
+                router.reload(); 
             })
             .catch((error) => {
                 console.error('Error deleting:', error);
