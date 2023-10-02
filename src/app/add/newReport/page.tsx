@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from 'antd';
 import NotFoundPage from '@/app/components/404';
-import ReportMap from '../../components/CreateReportMap/CreateReportMap';
+import ReportMap from '../../components/Create/CreateReportMap';
 
 const NewReport = () => {
     const role = localStorage.getItem('role');
