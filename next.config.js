@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Other Next.js config options...
-  server: {
-    // Add leaflet to the list of includes
-    includePackages: ["leaflet"],
-  },
-};
+const nextConfig = {}
 
-module.exports = nextConfig;
+module.exports = nextConfig
